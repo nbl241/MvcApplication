@@ -14,10 +14,10 @@ namespace MvcApplication.ViewModels
         public DateTime Date { get; set; }
         public bool IsPresent { get; set; }
         public int IdStudent { get; set; }
-        [Display(Name ="Student")]
-        public string NameStudent { get; set; }
+        [Display(Name ="Etudiant")]
+        public string StudentName { get; set; }
         public int IdClassRoom { get; set; }
-        [Display(Name = "ClassRoom")]
-        public string NameClassRoom { get; set; }
+        [Display(Name = "Salle")]
+        public string ClassRoomName { get; set; }
     }
 }

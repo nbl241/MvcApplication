@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace MvcApplication.Entities
+namespace MVCApplication.Entities
 {
     public class AttendanceContext : DbContext
     {
@@ -22,6 +22,6 @@ namespace MvcApplication.Entities
 
         }
 
-        public System.Data.Entity.DbSet<ViewModels.StudentViewModel> StudentViewModels { get; set; }
+        public System.Data.Entity.DbSet<MVCApplication.ViewModels.StudentViewModel> StudentViewModels { get; set; }
     }
 }

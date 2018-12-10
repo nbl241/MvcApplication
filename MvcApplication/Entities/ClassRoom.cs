@@ -12,11 +12,8 @@ namespace MvcApplication.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         public int Number { get; set; }
-
         public string Name { get; set; }
-
         public ICollection<Student> ListStudents { get; set; }
     }
 }

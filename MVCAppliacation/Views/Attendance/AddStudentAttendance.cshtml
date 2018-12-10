@@ -1,0 +1,23 @@
+﻿@model MVCApplication.ViewModels.StudentAttendanceViewModel
+
+@{
+    ViewBag.Title = "AddStudentAttendance";
+}
+
+<h2>AddStudentAttendance</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorFor(model => model, "StudentAttendanceViewModel")
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

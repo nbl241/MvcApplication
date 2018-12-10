@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace MvcApplication.Entities
+namespace MVCApplication.ViewModels
 {
-    public class Attendance
+    public class StudentAttendanceViewModel
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public bool IsPresent { get; set; }
-        [ForeignKey("Student")]
         public int IdStudent { get; set; }
-        public virtual Student Student { get; set; }
-        [ForeignKey("ClassRoom")]
+        [Display(Name ="Etudiant")]
+        public string StudentName { get; set; }
         public int IdClassRoom { get; set; }
-        public virtual ClassRoom ClassRoom { get; set; }
+        [Display(Name = "Salle")]
+        public string ClassRoomName { get; set; }
     }
 }

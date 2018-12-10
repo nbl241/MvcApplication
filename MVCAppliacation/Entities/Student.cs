@@ -5,12 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace MvcApplication.ViewModels
+namespace MVCApplication.Entities
 {
-    public class StudentViewModel
+    public class Student
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Display(Name = "Nom")]
         public string Name { get; set; }
+        public ICollection<ClassRoom> ListClassRooms { get; set; }
     }
 }
