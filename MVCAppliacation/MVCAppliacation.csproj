@@ -142,9 +142,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812101403051_Initmigration.cs" />
-    <Compile Include="Migrations\201812101403051_Initmigration.Designer.cs">
-      <DependentUpon>201812101403051_Initmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201812111352502_InitMigration.cs" />
+    <Compile Include="Migrations\201812111352502_InitMigration.Designer.cs">
+      <DependentUpon>201812111352502_InitMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,12 +188,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Student\CreateStudent.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Attendance\EditorTemplate\StudentAttendanceViewModel.cshtml" />
-    <Content Include="Views\Attendance\Index.cshtml" />
+    <Content Include="Views\Student\AddStudent.cshtml" />
+    <Content Include="Views\Attendance\EditorTemplates\StudentAttendanceViewModel.cshtml" />
     <Content Include="Views\Attendance\AddStudentAttendance.cshtml" />
-    <Content Include="Views\Attendance\Details.cshtml" />
+    <Content Include="Views\Attendance\DetailsStudentAttendance.cshtml" />
+    <Content Include="Views\Shared\_StringFormat.cshtml" />
+    <Content Include="Views\Student\DetailsStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -213,8 +213,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812101403051_Initmigration.resx">
-      <DependentUpon>201812101403051_Initmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812111352502_InitMigration.resx">
+      <DependentUpon>201812111352502_InitMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

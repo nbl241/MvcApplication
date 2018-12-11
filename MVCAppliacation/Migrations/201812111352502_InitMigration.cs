@@ -3,7 +3,7 @@ namespace MVCAppliacation.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initmigration : DbMigration
+    public partial class InitMigration : DbMigration
     {
         public override void Up()
         {
@@ -18,8 +18,8 @@ namespace MVCAppliacation.Migrations
                         IdClassRoom = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ClassRooms", t => t.IdClassRoom, cascadeDelete: false)
-                .ForeignKey("dbo.Students", t => t.IdStudent, cascadeDelete: false)
+                .ForeignKey("dbo.ClassRooms", t => t.IdClassRoom)
+                .ForeignKey("dbo.Students", t => t.IdStudent)
                 .Index(t => t.IdStudent)
                 .Index(t => t.IdClassRoom);
             
@@ -43,15 +43,6 @@ namespace MVCAppliacation.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.StudentViewModels",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.StudentClassRooms",
                 c => new
                     {
@@ -59,8 +50,8 @@ namespace MVCAppliacation.Migrations
                         ClassRoom_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.Student_Id, t.ClassRoom_Id })
-                .ForeignKey("dbo.Students", t => t.Student_Id, cascadeDelete: false)
-                .ForeignKey("dbo.ClassRooms", t => t.ClassRoom_Id, cascadeDelete: false)
+                .ForeignKey("dbo.Students", t => t.Student_Id)
+                .ForeignKey("dbo.ClassRooms", t => t.ClassRoom_Id)
                 .Index(t => t.Student_Id)
                 .Index(t => t.ClassRoom_Id);
             
@@ -77,7 +68,6 @@ namespace MVCAppliacation.Migrations
             DropIndex("dbo.Attendances", new[] { "IdClassRoom" });
             DropIndex("dbo.Attendances", new[] { "IdStudent" });
             DropTable("dbo.StudentClassRooms");
-            DropTable("dbo.StudentViewModels");
             DropTable("dbo.Students");
             DropTable("dbo.ClassRooms");
             DropTable("dbo.Attendances");

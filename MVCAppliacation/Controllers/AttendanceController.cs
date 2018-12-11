@@ -1,5 +1,4 @@
-﻿using MVCApplication.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,24 +8,15 @@ namespace MVCAppliacation.Controllers
 {
     public class AttendanceController : Controller
     {
-        protected AttendanceContext db = new AttendanceContext();
-
         // GET: Attendance
-        public ActionResult Index()
+        public ActionResult DetailsStudentAttendance()
         {
             return View();
         }
 
-        // GET
-        public ActionResult CreateStudentAttendance()
+        public ActionResult AddStudentAttendance()
         {
             return View();
         }
-
-        // POST
-        //public ActionResult CreateStudentAttendance()
-        //{
-
-        //}
     }
 }
