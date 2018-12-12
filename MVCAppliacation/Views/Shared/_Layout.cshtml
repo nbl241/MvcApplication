@@ -25,7 +25,8 @@
                     <li>@Html.ActionLink("À propos de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Etudiant", "AddStudent", "Student")</li>
-                    <li>@Html.ActionLink("Présence", "AddStudentAttendance", "Attendance")</li>
+                    <li>@Html.ActionLink("ClassRoom", "AddClassRoom", "ClassRoom")</li>
+                    <li>@Html.ActionLink("Présence", "ListStudentAttendance", "Attendance")</li>
                 </ul>
             </div>
         </div>
@@ -36,6 +37,7 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
+        @RenderSection("PiedDePage", false)
     </div>
 
     @Scripts.Render("~/bundles/jquery")

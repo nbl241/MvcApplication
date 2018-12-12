@@ -1,5 +1,4 @@
 ﻿using MVCApplication.Entities;
-using MVCApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +7,24 @@ using System.Web.Mvc;
 
 namespace MVCAppliacation.Controllers
 {
-    public class StudentController : Controller
+    public class ClassRoomController : Controller
     {
         AttendanceContext db = new AttendanceContext();
 
-        // GET: Student
-        public ActionResult DetailsStudent(StudentViewModel studentViewModel)
-        {
-            return View();
-        }
-
+        // GET: ClassRoom
         [HttpGet]
-        public ActionResult AddStudent()
+        public ActionResult AddClassRoom()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddStudent(Student student)
+        public ActionResult AddClassRoom(ClassRoom classRoom)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                db.Students.Add(student);
+                db.ClassRooms.Add(classRoom);
                 db.SaveChanges();
             }
             return View();

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVCApplication.ViewModels.Mapping
 {
-    public class Mapping
+    public static class Mapping
     {
         public static StudentViewModel MapStudentToStudentViewModel(Entities.Student student)
         {
