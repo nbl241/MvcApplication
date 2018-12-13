@@ -26,12 +26,11 @@ namespace MVCAppliacation.Controllers
             return View("ListStudentAttendance", liste.AsEnumerable());
         }
 
-        [HttpGet]
-        public ActionResult AddStudentAttendance()
+        private void ListeAttendance()
         {
             var students = db.Students.ToList();
             var listStudents = new List<SelectListItem>();
-            foreach(var student in students)
+            foreach (var student in students)
             {
                 listStudents.Add(new SelectListItem()
                 {
@@ -43,7 +42,7 @@ namespace MVCAppliacation.Controllers
 
             var classRooms = db.ClassRooms.ToList();
             var listClassRooms = new List<SelectListItem>();
-            foreach(var classRoom in classRooms)
+            foreach (var classRoom in classRooms)
             {
                 listClassRooms.Add(new SelectListItem()
                 {
@@ -52,6 +51,12 @@ namespace MVCAppliacation.Controllers
                 });
             }
             ViewBag.ClassRooms = listClassRooms;
+        }
+
+        [HttpGet]
+        public ActionResult AddStudentAttendance()
+        {
+            ListeAttendance();
 
             return View();
         }
@@ -66,7 +71,17 @@ namespace MVCAppliacation.Controllers
                 db.Attendances.Add(attendance);
                 db.SaveChanges();
             }
-            return View();
+
+            ListeAttendance();
+
+            return View(studentAttendanceViewModel);
+        }
+
+        public ActionResult DetailsStudentAttendance(int? id)
+        {
+            var attendance = Mapping.MapAttendanceToStudentAttendanceViewModel(db.Attendances.Find(id));
+
+            return View(attendance);
         }
 
         protected override void Dispose(bool disposing)
